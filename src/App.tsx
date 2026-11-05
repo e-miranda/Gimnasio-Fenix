@@ -21,13 +21,14 @@ import { CodeExplorer } from './components/studio/CodeExplorer';
 import { DatabaseSchemaVisualizer } from './components/studio/DatabaseSchemaVisualizer';
 import { ApiSandbox } from './components/studio/ApiSandbox';
 import { ArchitectureGuide } from './components/studio/ArchitectureGuide';
-import { Code2, Database, Terminal, BookOpen, Dumbbell, ShieldCheck, ShoppingBag, Sparkles } from 'lucide-react';
+import { GitHubDeployGuide } from './components/studio/GitHubDeployGuide';
+import { Code2, Database, Terminal, BookOpen, Dumbbell, ShieldCheck, ShoppingBag, Sparkles, Github } from 'lucide-react';
 
 export default function App() {
   // Navigation State
   const [viewMode, setViewMode] = useState<'app' | 'studio'>('app');
   const [activeTab, setActiveTab] = useState<string>('dashboard');
-  const [studioTab, setStudioTab] = useState<'code' | 'schema' | 'sandbox' | 'guide'>('code');
+  const [studioTab, setStudioTab] = useState<'code' | 'schema' | 'sandbox' | 'guide' | 'github'>('code');
 
   // Application Data State
   const [users] = useState<User[]>(SEED_USERS);
@@ -325,6 +326,7 @@ export default function App() {
                 { id: 'schema', label: 'Esquema MySQL & ERD', icon: Database, count: 7 },
                 { id: 'sandbox', label: 'API Sandbox & Profiler SQL', icon: Terminal },
                 { id: 'guide', label: 'Guía de Arquitectura Senior', icon: BookOpen },
+                { id: 'github', label: 'Publicar en GitHub', icon: Github, badge: 'Paso a Paso' },
               ].map((tab) => {
                 const Icon = tab.icon;
                 const isSelected = studioTab === tab.id;
@@ -334,7 +336,7 @@ export default function App() {
                     onClick={() => setStudioTab(tab.id as any)}
                     className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-mono font-semibold transition-all ${
                       isSelected
-                        ? 'bg-cyan-600 text-white shadow-md shadow-cyan-600/20'
+                        ? 'bg-red-600 text-white shadow-md shadow-red-600/30'
                         : 'text-slate-400 hover:text-white hover:bg-slate-800'
                     }`}
                   >
@@ -343,6 +345,11 @@ export default function App() {
                     {tab.count !== undefined && (
                       <span className="text-[10px] px-1.5 py-0.2 rounded bg-slate-950/60 text-cyan-300">
                         {tab.count}
+                      </span>
+                    )}
+                    {(tab as any).badge && (
+                      <span className="text-[10px] px-1.5 py-0.2 rounded bg-red-950 text-red-300 border border-red-800">
+                        {(tab as any).badge}
                       </span>
                     )}
                   </button>
@@ -361,6 +368,7 @@ export default function App() {
               />
             )}
             {studioTab === 'guide' && <ArchitectureGuide />}
+            {studioTab === 'github' && <GitHubDeployGuide />}
           </div>
         )}
       </main>
