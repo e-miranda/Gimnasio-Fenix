@@ -1,0 +1,6 @@
+{
+  "name": "Titan Gym - Laravel 13 Architecture & Platform",
+  "description": "Plataforma integral para Gimnasio (GYM) con gestión de miembros, e-commerce inteligente con venta cruzada por disciplinas, comunidad social y captación de leads con Pase Libre QR, diseñada bajo la arquitectura de Laravel 13 y PHP 8.4.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
