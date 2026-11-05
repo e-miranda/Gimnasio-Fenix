@@ -113,6 +113,67 @@ git push -u origin main`;
         </button>
       </div>
 
+      {/* GitHub Pages Solution Box for "Build and deployment / Source" */}
+      <div className="bg-gradient-to-r from-slate-900 via-red-950/40 to-slate-900 border-2 border-red-500 rounded-2xl p-6 space-y-4 shadow-2xl">
+        <div className="flex items-center gap-2.5">
+          <div className="w-8 h-8 rounded-lg bg-red-600 flex items-center justify-center text-white font-black">
+            !
+          </div>
+          <div>
+            <h2 className="text-base font-bold text-white font-mono">
+              Solución al mensaje: &quot;Build and deployment &gt; Source&quot; en GitHub Pages
+            </h2>
+            <p className="text-xs text-red-300">
+              Configuración necesaria para que GitHub Pages compile y publique automáticamente tu app de Vite / React.
+            </p>
+          </div>
+        </div>
+
+        <div className="p-4 bg-slate-950 rounded-xl border border-slate-800 space-y-3 text-xs">
+          <div className="flex items-start gap-3">
+            <span className="w-6 h-6 rounded-full bg-red-600/30 text-red-400 font-bold flex items-center justify-center shrink-0 font-mono text-xs border border-red-500/40">
+              1
+            </span>
+            <div>
+              <p className="text-white font-bold">
+                En GitHub ve a: <span className="text-red-400 font-mono">Settings &gt; Pages</span>
+              </p>
+              <p className="text-slate-400 text-[11px] mt-0.5">
+                En la barra lateral izquierda de tu repositorio en GitHub.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-3">
+            <span className="w-6 h-6 rounded-full bg-red-600/30 text-red-400 font-bold flex items-center justify-center shrink-0 font-mono text-xs border border-red-500/40">
+              2
+            </span>
+            <div>
+              <p className="text-white font-bold">
+                En &quot;Build and deployment &gt; Source&quot;, selecciona: <span className="text-emerald-400 font-mono bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/30">GitHub Actions</span>
+              </p>
+              <p className="text-slate-400 text-[11px] mt-0.5">
+                Por defecto GitHub muestra &quot;Deploy from a branch&quot;. Cámbialo a <strong>GitHub Actions</strong>.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-3">
+            <span className="w-6 h-6 rounded-full bg-red-600/30 text-red-400 font-bold flex items-center justify-center shrink-0 font-mono text-xs border border-red-500/40">
+              3
+            </span>
+            <div>
+              <p className="text-white font-bold">
+                ¡Listo! El flujo <code className="text-cyan-400">.github/workflows/deploy.yml</code> ya está creado
+              </p>
+              <p className="text-slate-400 text-[11px] mt-0.5">
+                GitHub detectará automáticamente nuestro workflow, compilará la app con Node 20 y Vite, y te dará tu enlace en vivo: <span className="text-red-400 font-mono">https://{cleanUser}.github.io/{cleanRepo}/</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Dynamic Repo Configurator */}
       <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4">
         <h2 className="text-sm font-mono uppercase tracking-wider text-slate-300 font-bold flex items-center gap-2">

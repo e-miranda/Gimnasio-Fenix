@@ -106,6 +106,19 @@ php artisan queue:work --tries=3
 
 ---
 
+## 🌐 Despliegue en GitHub Pages (Paso a Paso)
+
+Este repositorio incluye el workflow automatizado `.github/workflows/deploy.yml` y soporte de rutas relativas (`base: './'` en `vite.config.ts`).
+
+Para publicar la app en vivo en GitHub Pages:
+1. Sube tu código a GitHub (`git push -u origin main`).
+2. En GitHub, ve a tu repositorio y entra a **Settings** > **Pages** (en el menú lateral izquierdo).
+3. En la sección **Build and deployment** > **Source**, selecciona: **`GitHub Actions`**.
+4. GitHub ejecutará automáticamente el workflow y en 1 minuto tu aplicación estará publicada en:
+   `https://<TU-USUARIO>.github.io/<TU-REPOSITORIO>/`
+
+---
+
 ## 📁 Estructura del Código
 
 ```text
